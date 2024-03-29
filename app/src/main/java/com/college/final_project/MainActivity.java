@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main).
+        setContentView(R.layout.activity_main); // Ensure this is the correct layout file.
 
         searchEditText = findViewById(R.id.searchEditText);
         searchButton = findViewById(R.id.searchButton);
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             if (!query.isEmpty()) {
                 searchRecipes(query);
             } else {
-                Toast.makeText(MainActivity.this, "Please enter a search term.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.enter_search_term, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -71,21 +71,20 @@ public class MainActivity extends AppCompatActivity {
                                 Recipe recipe = new Recipe();
                                 recipe.setTitle(recipeObject.getString("title"));
                                 recipe.setImageUrl(recipeObject.getString("image"));
-                                // Add more fields as per your Recipe class
                                 recipeList.add(recipe);
                             }
 
                             adapter.notifyDataSetChanged();
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(MainActivity.this, "An error occurred.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, R.string.error_occurred, Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainActivity.this, "Error fetching data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, R.string.error_fetch_data, Toast.LENGTH_SHORT).show();
                     }
                 });
 

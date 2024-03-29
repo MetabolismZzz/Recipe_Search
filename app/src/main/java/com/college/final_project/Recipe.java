@@ -1,29 +1,35 @@
 package com.college.final_project;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 /**
  * Represents a recipe with properties to hold necessary data like title, image URL, summary, and Spoonacular source URL.
  */
+@Entity(tableName = "recipes") // Defines the table name
 public class Recipe {
+    @PrimaryKey(autoGenerate = true) // Auto-generate ID for each entry
+    private int id; // Unique ID for the Recipe
+
+    @ColumnInfo(name = "title")
     private String title;
+
+    @ColumnInfo(name = "image_url")
     private String imageUrl;
+
+    @ColumnInfo(name = "summary")
     private String summary;
+
+    @ColumnInfo(name = "source_url")
     private String sourceUrl;
 
-    /**
-     * Constructs a new Recipe with default properties.
-     */
+    // Constructor, getters, and setters
+
     public Recipe() {
         // Default constructor
     }
 
-    /**
-     * Constructs a new Recipe with the specified title, image URL, summary, and source URL.
-     *
-     * @param title     The title of the recipe.
-     * @param imageUrl  The URL of the recipe's image.
-     * @param summary   A summary of the recipe.
-     * @param sourceUrl The Spoonacular source URL of the recipe.
-     */
     public Recipe(String title, String imageUrl, String summary, String sourceUrl) {
         this.title = title;
         this.imageUrl = imageUrl;
@@ -31,7 +37,14 @@ public class Recipe {
         this.sourceUrl = sourceUrl;
     }
 
-    // Getter and setter methods for each property
+    // ID getter and setter
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getTitle() {
         return title;
@@ -65,15 +78,11 @@ public class Recipe {
         this.sourceUrl = sourceUrl;
     }
 
-    /**
-     * Returns a string representation of the Recipe, which includes its title.
-     *
-     * @return A string representation of the Recipe.
-     */
     @Override
     public String toString() {
         return "Recipe{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", imageUrl='" + imageUrl + '\'' +
                 ", summary='" + summary + '\'' +
                 ", sourceUrl='" + sourceUrl + '\'' +

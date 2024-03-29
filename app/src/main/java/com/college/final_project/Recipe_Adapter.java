@@ -10,11 +10,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.college.converter.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
-
-import com.college.final_project.R;
 
 public class Recipe_Adapter extends RecyclerView.Adapter<Recipe_Adapter.RecipeViewHolder> {
     private Context context;
