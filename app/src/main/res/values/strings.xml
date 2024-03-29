@@ -1,7 +1,8 @@
 <resources>
-    <string name="app_name">Currency Converter</string>
-    <string name="result_euros">%1$.2f Euros</string>
-    <string name="enter_dollars">Enter Dollars</string>
-    <string name="result">Result</string>
-    <string name="convertButton">Convert</string>
+    <string name="app_name">Recipe Search</string>
+    <string name="search_hint">Enter recipe name</string>
+    <string name="search_button">Search</string>
+    <string name="enter_search_term">Please enter a search term.</string>
+    <string name="error_fetch_data">Error fetching data</string>
+    <string name="error_occurred">An error occurred.</string>
 </resources>
