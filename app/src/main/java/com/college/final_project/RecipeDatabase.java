@@ -5,22 +5,19 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-// Ensure entities and version are correctly set.
 @Database(entities = {Recipe.class}, version = 1, exportSchema = false)
-public abstract class AppDatabase extends RoomDatabase {
+public abstract class RecipeDatabase extends RoomDatabase {
     public abstract RecipeDao recipeDao();
 
-    // Use volatile to ensure atomic access to the variable
-    private static volatile AppDatabase INSTANCE;
+    private static volatile RecipeDatabase INSTANCE;
 
-    public static AppDatabase getDbInstance(Context context) {
-        // Double-check locking pattern
+    public static RecipeDatabase getDbInstance(Context context) {
         if (INSTANCE == null) {
-            synchronized (AppDatabase.class) {
+            synchronized (RecipeDatabase.class) {
                 if (INSTANCE == null) {
                     INSTANCE = Room.databaseBuilder(context.getApplicationContext(),
-                                    AppDatabase.class, "recipes_database")
-                            .fallbackToDestructiveMigration() // Handle migrations properly
+                                    RecipeDatabase.class, "recipes_database")
+                            .fallbackToDestructiveMigration() // You might want to handle migrations properly instead
                             .build();
                 }
             }

@@ -4,32 +4,28 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-/**
- * Represents a recipe with properties to hold necessary data like title, image URL, summary, and Spoonacular source URL.
- */
-@Entity(tableName = "recipes") // Defines the table name
+@Entity(tableName = "recipes")
 public class Recipe {
-    @PrimaryKey(autoGenerate = true) // Auto-generate ID for each entry
-    private int id; // Unique ID for the Recipe
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name="id")
+    public int id;
 
-    @ColumnInfo(name = "title")
-    private String title;
+    @ColumnInfo(name="title")
+    public String title;
 
-    @ColumnInfo(name = "image_url")
-    private String imageUrl;
+    @ColumnInfo(name="image_url")
+    public String imageUrl;
 
-    @ColumnInfo(name = "summary")
-    private String summary;
+    @ColumnInfo(name="summary")
+    public String summary;
 
-    @ColumnInfo(name = "source_url")
-    private String sourceUrl;
+    @ColumnInfo(name="source_url")
+    public String sourceUrl;
 
-    // Constructor, getters, and setters
+    // Default constructor
+    public Recipe() {}
 
-    public Recipe() {
-        // Default constructor
-    }
-
+    // Parameterized constructor
     public Recipe(String title, String imageUrl, String summary, String sourceUrl) {
         this.title = title;
         this.imageUrl = imageUrl;
@@ -37,55 +33,26 @@ public class Recipe {
         this.sourceUrl = sourceUrl;
     }
 
-    // ID getter and setter
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
+    // Getters
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
     public String getSummary() {
         return summary;
-    }
-
-    public void setSummary(String summary) {
-        this.summary = summary;
     }
 
     public String getSourceUrl() {
         return sourceUrl;
     }
 
-    public void setSourceUrl(String sourceUrl) {
-        this.sourceUrl = sourceUrl;
+    public void setImageUrl(String image) {
     }
 
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", summary='" + summary + '\'' +
-                ", sourceUrl='" + sourceUrl + '\'' +
-                '}';
+    public void setTitle(String title) {
     }
 }

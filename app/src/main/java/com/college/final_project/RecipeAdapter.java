@@ -15,11 +15,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class Recipe_Adapter extends RecyclerView.Adapter<Recipe_Adapter.RecipeViewHolder> {
+public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.RecipeViewHolder> {
     private Context context;
     private List<Recipe> recipeList;
 
-    public Recipe_Adapter(Context context, List<Recipe> recipeList) {
+    public RecipeAdapter(Context context, List<Recipe> recipeList) {
         this.context = context;
         this.recipeList = recipeList;
     }

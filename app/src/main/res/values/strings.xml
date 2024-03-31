@@ -5,4 +5,6 @@
     <string name="enter_search_term">Please enter a search term.</string>
     <string name="error_fetch_data">Error fetching data</string>
     <string name="error_occurred">An error occurred.</string>
+    <string name="search_edittext_description">Input field for recipe name</string>
+    <string name="search_button_description">Press to search recipes</string>
 </resources>

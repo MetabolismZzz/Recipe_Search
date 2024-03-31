@@ -32,8 +32,8 @@ import org.junit.runner.RunWith;
 public class MainActivityTest {
 
     @Rule
-    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<RecipeSearchActivity> mActivityScenarioRule =
+            new ActivityScenarioRule<>(RecipeSearchActivity.class);
 
     @Test
     public void mainActivityTest4() {

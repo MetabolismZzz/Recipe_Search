@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RecipeSearchActivity">
 
     <EditText
         android:id="@+id/searchEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/search_hint"
+        android:imeOptions="actionSearch"
+        android:inputType="text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/searchButton"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"/>
+        android:layout_marginEnd="8dp"
+        android:importantForAccessibility="yes"
+        android:contentDescription="@string/search_edittext_description"/>
 
     <Button
         android:id="@+id/searchButton"
@@ -28,7 +32,9 @@
         app:layout_constraintBottom_toBottomOf="@id/searchEditText"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        android:importantForAccessibility="yes"
+        android:contentDescription="@string/search_button_description"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recipesRecyclerView"
@@ -40,6 +46,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        android:importantForAccessibility="yes"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

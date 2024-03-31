@@ -32,8 +32,8 @@ public class MainActivityTest2 {
 
     @Rule
     // Rule to launch the activity before each test method
-    public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
-            new ActivityScenarioRule<>(MainActivity.class);
+    public ActivityScenarioRule<RecipeSearchActivity> mActivityScenarioRule =
+            new ActivityScenarioRule<>(RecipeSearchActivity.class);
 
     @Test // Annotation to indicate this method is a test case
     public void mainActivityTest2() {

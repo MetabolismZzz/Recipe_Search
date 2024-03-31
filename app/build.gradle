@@ -3,11 +3,6 @@ plugins {
 }
 
 android {
-
-    viewBinding {
-        enabled = true
-    }
-
     compileSdk 34
 
     defaultConfig {
@@ -16,8 +11,14 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        // Enable viewBinding
+        viewBinding true
+        // Enable dataBinding
+        dataBinding true
     }
 
     buildTypes {
@@ -26,15 +27,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     namespace 'com.college.converter'
 }
 
 dependencies {
-
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -42,21 +44,14 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // Volley library for making network requests. Used for fetching recipe data from Spoonacular API.
+    // Volley library for making network requests.
     implementation 'com.android.volley:volley:1.2.0'
 
-    // Room components for database operations. Used for storing and retrieving favorite recipes locally.
-    implementation 'androidx.room:room-runtime:2.2.5'
-    // Compiler for Room to generate necessary code.
-    annotationProcessor 'androidx.room:room-compiler:2.2.5'
+    // Room components for database operations.
+    implementation 'androidx.room:room-runtime:2.4.2'
 
-    // LiveData and ViewModel for managing UI-related data in a lifecycle-conscious way and separating app logic from UI.
-    // LiveData is used for updating the UI in response to data changes.
+    // LiveData and ViewModel
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
-    // ViewModel is used to store and manage UI-related data in a lifecycle-conscious way.
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
-
-    implementation 'androidx.room:room-runtime:2.4.2'
-    annotationProcessor 'androidx.room:room-compiler:2.4.2'
 }

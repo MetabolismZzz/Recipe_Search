@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RecipeDetailsActivity">
+    tools:context="com.college.final_project.RecipeDetailsActivity">
 
     <ImageView
-        android:id="@+id/detailImage"
+        android:id="@+id/recipeImage"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
@@ -17,28 +17,42 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/detailTitle"
+        android:id="@+id/recipeTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/detailImage"
+        app:layout_constraintTop_toBottomOf="@id/recipeImage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Recipe Title" />
 
     <TextView
-        android:id="@+id/detailSummary"
+        android:id="@+id/recipeSummary"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintTop_toBottomOf="@id/detailTitle"
+        app:layout_constraintTop_toBottomOf="@id/recipeTitle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:text="Recipe summary or detailed description goes here. This field can contain a lengthy text." />
+
+    <TextView
+        android:id="@+id/recipeSourceUrl"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="16sp"
+        android:textColor="@color/purple_200"
+        app:layout_constraintTop_toBottomOf="@id/recipeSummary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="http://source.url.here" />
 
     <!-- Add additional views for other recipe details as needed -->
 

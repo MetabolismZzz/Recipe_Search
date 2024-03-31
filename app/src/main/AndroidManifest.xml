@@ -13,15 +13,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Recipe_Search"
         tools:targetApi="31">
+
+        <!-- Main Activity (Launcher Activity) -->
         <activity
-            android:name="com.college.final_project.MainActivity"
+            android:name="com.college.final_project.RecipeSearchActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Favorite Activity -->
+        <activity
+            android:name="com.college.final_project.FavoriteActivity"
+            android:exported="true">
+            <!-- If you have specific intent-filters for this activity, add them here -->
+        </activity>
+
+
+        <!-- Recipe Details -->
+        <activity
+            android:name="com.college.final_project.RecipeDetailsActivity"
+            android:exported="true">
+            <!-- If you have specific intent-filters for this activity, add them here -->
+        </activity>
+
+
+
     </application>
 
 </manifest>
